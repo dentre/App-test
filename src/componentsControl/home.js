@@ -29,6 +29,7 @@ export default {
     //récupération des données via l'api
     this.axios.get("https://post-api-platform.herokuapp.com/api/posts?page=1", {
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.token
       }
@@ -70,7 +71,10 @@ export default {
       })
     },
     supprimer(item) {
-      this.axios.delete("https://post-api-platform.herokuapp.com/api/posts/"+ item, {
+      let confirmation = confirm("Etes vous sur de vouloir supprimer l'article : " + item.title + " ?") 
+      if (confirmation == true){
+      
+      this.axios.delete("https://post-api-platform.herokuapp.com/api/posts/"+ item.id, {
         headers: {
           'Content-Type': 'application/merge-patch+json',
           'Authorization': 'Bearer ' + localStorage.token
@@ -80,5 +84,6 @@ export default {
         location.reload()
       )
     }
+  }
   }
 }

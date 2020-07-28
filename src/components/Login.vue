@@ -7,15 +7,15 @@
       <h1>LOGIN</h1>
     </div>
     <div class="firstblock">
-      <h2>Identifiant</h2>
-      <input id="ident"/>
+      <h3>Identifiant</h3>
+      <input class="inputTitle" id="ident" type="text"/>
     </div>
     <div class="secondblock">
-      <h2>Mot de passe</h2>
-      <input id="mdp" type="password"/>
+      <h3>Mot de passe</h3>
+      <input class="inputTitle" id="mdp" type="password"/>
     </div>
     <div class="thirdblock">
-      <button v-on:click="loginGuidap">Se connecter</button>
+      <button v-on:click="loginGuidap" class="btn-green">Se connecter</button>
     </div>
   </div>
 </template>
